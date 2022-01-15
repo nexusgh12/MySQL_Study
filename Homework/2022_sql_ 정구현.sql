@@ -1,6 +1,9 @@
 show databases;
+
 use employees;
+
 show tables;
+
 -- 1.  EMPLOYEES 테이블의 레코드 중 사원번호, 사원명, 입사일, 성별을 선택하라.
 select emp_no, first_name, hire_date, gender from employees;
 
@@ -14,7 +17,7 @@ where hire_date like '_____06%' or hire_date like  '_____12%' limit 100;
 
 -- 4.  EMPLOYEES테이블의 레코드 중 사원명에 ‘A’로 시작하고 생일이 1950년~1959년 사이인 
 -- 사원을 나이가 많은 순으로 선택하라.
-select * from employees where birth_date between DATE'1950-01-01' and DATE'1959-12-30' order by birth_date asc;
+select * from employees where birth_date >= '1950-01-01' AND birth_date < '1959-12-31' order by birth_date asc;
 
 -- 5. EMPLOYEES테이블의 레코드 중 1960년도에 태어난 남자사원을 선택하라. 
 select * from employees where birth_date like '1960%' and gender='M';
